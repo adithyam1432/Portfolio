@@ -67,22 +67,18 @@ export const Education = () => {
                   </div>
                 </div>
 
-                {/* Performance Metric Pill (CGPA / Percentage) */}
+                {/* Performance Metric Pill (CGPA / Percentage)
                 {item.score && (
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-teal-50 border border-teal-200 text-[#0F766E] text-xs font-mono font-bold">
                     <Award className="w-3.5 h-3.5" />
                     <span>{item.score}</span>
                   </div>
-                )}
+                )} */}
 
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {item.detail}
                 </p>
 
-              </div>
-
-              <div className="pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-mono">
-                Verified Academic Record
               </div>
 
             </div>

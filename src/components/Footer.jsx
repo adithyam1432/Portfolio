@@ -74,9 +74,6 @@ export const Footer = () => {
           <div>
             © {new Date().getFullYear()} Adithya Ashok Menashinakai. All rights reserved.
           </div>
-          <div>
-            Built with React, Vite & Tailwind CSS • Deployable on GitHub Pages
-          </div>
         </div>
 
       </div>
