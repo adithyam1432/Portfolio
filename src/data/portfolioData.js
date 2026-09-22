@@ -2,8 +2,9 @@ export const portfolioData = {
   personal: {
     name: "ADITHYA ASHOK MENASHINAKAI",
     displayName: "Adithya Menashinakai",
-    title: "Aspiring Data Analyst & Software Developer",
-    summary: "Aspiring Data Analyst skilled in Python, Excel, Power BI, Tableau, and relational databases. Experienced in data extraction, transformation, and analysis using Oracle and AWS, with hands-on experience in data cleaning and anomaly handling. Built a Python-based stock analysis platform to derive market insights and support data-driven decisions.",
+    title: "Data Analyst & Software Developer",
+    summary: "Data Analyst skilled in Python, SQL, Excel, Power BI, Tableau, and relational databases. Experienced in data extraction, transformation, and analysis using Oracle and AWS S3, with hands-on expertise in data cleaning and anomaly handling. Built Candle Miner, a Python-based stock market analysis platform to turn raw financial data into clear, actionable trading insights.",
+    greeting: "Hi, I'm Adithya — I turn complex data into clear answers.",
     location: "Dharwad, Karnataka - 580007",
     email: "adithyam.mca@gmail.com",
     phone: "+91-9731572531",
@@ -11,22 +12,22 @@ export const portfolioData = {
     github: "https://github.com/adithyam1432",
     profilePhoto: "./assets/frameimg.jpeg",
     resumePdf: "./assets/Adithya_Menashinakai_Resume.pdf",
-    availability: "Open to Data Analytics & Software Engineering Roles"
+    availability: "Available for Data Analytics & Software Roles"
   },
 
   about: {
-    badge: "Recruiter Summary",
-    headline: "Translating Complex Datasets into Data-Driven Business Decisions",
+    badge: "My Story & Focus",
+    headline: "Connecting the Dots Between Raw Data and Real Business Value",
     paragraphs: [
-      "Currently pursuing my Master of Computer Applications (MCA) at Chetan Business School, Hubli, following a Bachelor of Computer Applications (BCA) with an 8.3 CGPA from KLE Society's College.",
-      "My technical background bridges data analytics and software development. During my internship at Vistaar Financial Services in Bangalore, I engineered SQL data extraction workflows across Oracle databases and AWS S3, significantly streamlining daily analyst workflows.",
-      "I specialize in end-to-end data analytics—from raw CSV ingestion and data cleaning in Pandas and NumPy to building interactive Power BI & Tableau visual reports, as well as full-stack application development."
+      "I've always been drawn to numbers and patterns—specifically, how raw data holds the answers to real business challenges when approached with curiosity and the right analytical tools.",
+      "Currently pursuing my Master of Computer Applications (MCA) at Chetan Business School in Hubli, I previously graduated with an 8.3 CGPA in Bachelor of Computer Applications (BCA) from KLE Society's College in Dharwad.",
+      "During my Data Analytics Internship at Vistaar Financial Services in Bangalore, I worked directly with enterprise Oracle databases and AWS S3 cloud platforms. I wrote SQL extractions that simplified daily data workflows and directly reduced workload for senior analysts. Whether it's cleaning messy CSVs in Pandas, building visual Power BI dashboards, or writing SQL queries, I focus on delivering data you can actually act on."
     ],
     highlights: [
-      { label: "BCA Performance", value: "8.3 CGPA" },
-      { label: "Current Focus", value: "MCA (2025–2027)" },
-      { label: "Core Expertise", value: "Python, SQL, Power BI, AWS S3" },
-      { label: "Experience Level", value: "Enterprise Analytics Intern" }
+      { label: "BCA Distinction", value: "8.3 CGPA" },
+      { label: "Current Degree", value: "MCA (2025–2027)" },
+      { label: "Core Tooling", value: "Python, SQL, Power BI, AWS" },
+      { label: "Hands-On Experience", value: "Enterprise Analytics Intern" }
     ]
   },
 
@@ -34,37 +35,37 @@ export const portfolioData = {
     categories: [
       {
         id: "programming",
-        name: "Programming",
+        name: "Programming Languages",
         icon: "Code",
         skills: ["Python", "SQL"]
       },
       {
         id: "databases",
-        name: "Databases",
+        name: "Relational Databases",
         icon: "Database",
         skills: ["MySQL", "PostgreSQL", "Oracle", "DBMS"]
       },
       {
         id: "bi_analytics",
-        name: "BI & Analytics Tools",
+        name: "BI & Visualization",
         icon: "BarChart3",
         skills: ["Excel", "Power BI", "Tableau"]
       },
       {
         id: "python_libs",
-        name: "Python Libraries",
+        name: "Data Libraries",
         icon: "Cpu",
         skills: ["Pandas", "NumPy"]
       },
       {
         id: "tools",
-        name: "Database & IDE Tools",
+        name: "Database & Developer Tools",
         icon: "Wrench",
         skills: ["Oracle SQL Developer", "DBeaver", "VS Code", "GitHub"]
       },
       {
         id: "data_analysis",
-        name: "Data Analysis",
+        name: "Analytical Practice",
         icon: "TrendingUp",
         skills: ["Data Cleaning", "Data Analysis", "Report Generation"]
       }
@@ -78,9 +79,9 @@ export const portfolioData = {
       subtitle: "Quantitative Stock Market Analysis & Pattern Clustering Platform",
       category: "Data Mining & Analytics",
       tech: ["Python", "React", "Pandas", "NumPy"],
-      description: "An end-to-end data mining platform engineered to ingest raw stock-price CSV files for structured market analysis, behavior pattern clustering, and automated quantitative analysis.",
-      problem: "Manual stock chart analysis is time-intensive, subjective, and prone to error when scanning multi-timeframe historical market data.",
-      contribution: "Designed and implemented raw CSV parsing scripts, applied Pandas and NumPy for market pattern clustering, and built an intuitive quantitative workflow to eliminate manual chart inspection.",
+      description: "A complete data mining platform built to ingest raw stock-price CSV files, analyze price behavior patterns, and group market trends automatically.",
+      problem: "Manual stock chart analysis is repetitive, subjective, and easy to misinterpret when scanning multiple historical timeframes.",
+      contribution: "Built raw CSV parsing scripts in Python, applied Pandas and NumPy clustering techniques to group price action patterns, and created a quantitative workflow that removes the guesswork from manual chart analysis.",
       liveUrl: "https://stock-movement-predictor.vercel.app/",
       githubUrl: "https://github.com/adithyam1432",
       featured: true,
@@ -89,16 +90,16 @@ export const portfolioData = {
     {
       id: "antiques",
       title: "Secure E-Commerce & Curated Antique Marketplace (AntiQues)",
-      subtitle: "Full-Stack Antique Marketplace & Admin Operations Dashboard",
+      subtitle: "Full-Stack Antique Marketplace with Store Owner Dashboard",
       category: "Full-Stack Development",
       tech: ["Next.js (React)", "MySQL", "Three.js"],
-      description: "A responsive full-stack e-commerce web application with user registration, catalog filtering, cart management, shipping logistics tracking, and an integrated store owner management dashboard.",
-      problem: "Niche antique sellers require secure product catalog management, transactional workflows, and real-time operational dashboard monitoring.",
-      contribution: "Architected MySQL relational schema for users, orders, and products; developed Next.js catalog filtering and shipping tracking; integrated Three.js for immersive 3D item presentation.",
-      liveUrl: null, // Hidden per instructions as no live URL exists in resume
+      description: "A responsive e-commerce web application featuring user registration, item catalog filtering, cart handling, shipping tracking, and a dedicated admin operations dashboard.",
+      problem: "Niche online sellers need clean product cataloging, secure user/order management, and real-time operational dashboard metrics.",
+      contribution: "Designed the MySQL database schema for products, users, carts, and orders; built Next.js catalog filtering and shipping tracking; integrated Three.js for interactive 3D product previews.",
+      liveUrl: null,
       githubUrl: "https://github.com/adithyam1432",
       featured: true,
-      metrics: "Full-stack MySQL data management with live shipping tracking & owner dashboard"
+      metrics: "MySQL relational data storage with live order tracking & owner dashboard"
     }
   ],
 
@@ -111,8 +112,8 @@ export const portfolioData = {
       period: "Feb 2025 – Apr 2025",
       type: "Internship",
       highlights: [
-        "Improved data extraction processes from Oracle database and AWS cloud platforms (S3) using SQL, achieving direct reduction in senior analyst workload.",
-        "Gained hands-on experience with Oracle SQL Developer and DBeaver for enterprise database management and complex query optimization."
+        "Streamlined data extraction workflows from Oracle databases and AWS S3 cloud storage using optimized SQL queries, reducing daily workload for senior analysts.",
+        "Gained hands-on experience using Oracle SQL Developer and DBeaver for enterprise database querying and data maintenance."
       ],
       tech: ["SQL", "Oracle Database", "AWS S3", "Oracle SQL Developer", "DBeaver"]
     }
@@ -124,7 +125,7 @@ export const portfolioData = {
       title: "Deloitte Australia Technology Job Simulation",
       issuer: "Forage",
       date: "Sep 2025",
-      description: "Completed an intensive technology job simulation involving real-world enterprise development and coding challenges in a simulated consulting environment.",
+      description: "Participated in a realistic technology consulting job simulation, working through real-world software engineering and analytical problem-solving challenges.",
       skillsApplied: ["Problem Solving", "Ideation", "Technical Analysis", "Consulting Workflow"]
     }
   ],
@@ -137,7 +138,7 @@ export const portfolioData = {
       location: "Hubli, Karnataka",
       period: "2025 – 2027",
       status: "Pursuing",
-      detail: "Advanced study in computer applications, data structures, cloud systems, and enterprise software engineering."
+      detail: "Advanced focus on software engineering, cloud database systems, and data analytics methodologies."
     },
     {
       id: "bca",
@@ -147,7 +148,7 @@ export const portfolioData = {
       period: "2021 – 2024",
       status: "Completed",
       score: "CGPA: 8.3",
-      detail: "Core computer science fundamentals, programming in Python/SQL, database systems, and web applications."
+      detail: "Core computer science fundamentals, Python/SQL programming, database architecture, and web systems."
     },
     {
       id: "puc",
@@ -157,7 +158,7 @@ export const portfolioData = {
       period: "2018 – 2021",
       status: "Completed",
       score: "Percentage: 53% | Karnataka State Board",
-      detail: "Focused on physics, chemistry, mathematics, and science principles."
+      detail: "Science stream coursework in mathematics, physics, chemistry, and computer science basics."
     }
   ]
 };

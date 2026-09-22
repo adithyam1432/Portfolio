@@ -45,9 +45,14 @@ export const Hero = ({ onOpenResumeModal }) => {
             </div>
 
             {/* Concise Recruiter Value Proposition */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-              Specialized in Python data analytics, SQL extraction across Oracle databases & AWS S3, relational database design, Power BI reports, and full-stack web applications. MCA candidate with verified enterprise analytics internship experience.
-            </p>
+            <div className="space-y-2">
+              <p className="text-[#0F766E] font-semibold text-sm sm:text-base font-mono">
+                {personal.greeting}
+              </p>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+                {personal.summary}
+              </p>
+            </div>
 
             {/* Recruiter Quick Info Grid */}
             <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-600 font-medium pt-1">
