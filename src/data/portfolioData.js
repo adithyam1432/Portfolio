@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "ADITHYA ASHOK MENASHINAKAI",
     displayName: "Adithya Menashinakai",
     title: "Data Analyst & Software Developer",
-    summary: "Data Analyst skilled in Python, SQL, Excel, Power BI, Tableau, and relational databases. Experienced in data extraction, transformation, and analysis using Oracle and AWS S3, with hands-on expertise in data cleaning and anomaly handling. Built Candle Miner, a Python-based stock market analysis platform to turn raw financial data into clear, actionable trading insights.",
+    summary: "Data Analyst eager to keep learning and improving in Python, SQL, Excel, Power BI, Tableau, and relational databases. I focus on hands-on practice—cleaning messy data, extracting datasets from Oracle & AWS S3, and building Python projects like Candle Miner to solve real problems step by step.",
     greeting: "Hi, I'm Adithya — I turn complex data into clear answers.",
     location: "Dharwad, Karnataka - 580007",
     email: "adithyam.mca@gmail.com",
