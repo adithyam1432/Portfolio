@@ -2,9 +2,9 @@ export const portfolioData = {
   personal: {
     name: "ADITHYA ASHOK MENASHINAKAI",
     displayName: "Adithya Menashinakai",
-    title: "Data Analyst & Full-Stack Developer",
-    summary: "MCA student and BCA graduate continuously learning and building with Python, SQL, React, Next.js, and relational databases. I focus on hands-on practice—from extracting and cleaning data with Oracle and AWS (S3) to building applications like Candle Miner (automated market data analysis) and full-stack web solutions. Winner of the MITK AI Vision National Level 24-Hour Hackathon (2026).",
-    greeting: "Hi, I'm Adithya — I turn complex data into clear answers.",
+    title: "Frontend Developer & Software Engineer",
+    summary: "MCA student and BCA graduate passionate about building responsive web applications and reliable software solutions using React, Next.js, Python, SQL, and relational databases. Experienced in enterprise data extraction and cloud workflows from my internship at Vistaar Financial Services (Oracle & AWS S3). Built full-stack platforms including Candle Miner and an e-commerce platform on MySQL. First Prize Winner at the MITK AI Vision National Level 24-Hour Hackathon (2026).",
+    greeting: "Hi, I'm Adithya — I build responsive web apps and clean software solutions.",
     location: "Dharwad, Karnataka - 580007",
     email: "adithyam.mca@gmail.com",
     phone: "+91-9731572531",
@@ -13,23 +13,24 @@ export const portfolioData = {
     portfolioUrl: "https://adithyam1432.github.io/Portfolio/",
     profilePhoto: "./assets/frameimg.jpeg",
     resumePdf: "./assets/Adithya_Menashinakai_Resume.pdf",
-    availability: "Available for Data Analytics & Software Roles"
+    availability: "Available for Frontend Developer & Software Engineer Roles"
   },
 
   about: {
     badge: "My Story & Focus",
-    headline: "Connecting Data Engineering, Web Tech, and Real Solutions",
+    headline: "Building Modern Web Interfaces & Solving Engineering Challenges",
     paragraphs: [
-      "I'm an MCA student with a BCA graduate background (8.3 CGPA) who genuinely enjoys working with data, writing clean SQL, and building practical applications with Python, React, and Next.js.",
-      "During my Data Analytics Internship at Vistaar Financial Services in Bangalore, I used Oracle databases and AWS (S3) via SQL, contributing to streamlined reporting workflows for the analytics team and managing enterprise databases using Oracle SQL Developer and DBeaver.",
-      "Beyond daily coursework and data pipelines, I enjoy building end-to-end projects like Candle Miner (an automated stock market data mining pipeline) and competing in intensive events—recently winning First Prize at the MITK AI Vision National Level 24-Hour Hackathon (2026)."
+      "I'm an MCA student with a BCA graduate background (8.3 CGPA) who genuinely enjoys crafting responsive user interfaces, writing clean code in React and Next.js, and engineering software with Python, SQL, and relational databases.",
+      "During my Data Analytics Internship at Vistaar Financial Services in Bangalore, I worked with Oracle databases and AWS (S3) via SQL, contributing to streamlined reporting workflows for the analytics team and managing enterprise databases using Oracle SQL Developer and DBeaver.",
+      "Beyond coursework, I build full-stack web applications like AntiQues (Next.js & MySQL) and Candle Miner (automated data mining in Python & React), and recently won First Prize at the MITK AI Vision National Level 24-Hour Hackathon (2026)."
     ],
     highlights: [
       { label: "Hackathon Winner", value: "MITK AI Vision 24H (1st Prize)" },
       { label: "BCA Distinction", value: "8.3 CGPA" },
       { label: "Current Degree", value: "MCA (Pursuing)" },
-      { label: "Core Stack", value: "Python, SQL, React, AWS (S3)" }
-    ]
+      { label: "Core Stack", value: "React, Next.js, Python, SQL" }
+    ],
+    targetOpportunities: "Seeking Frontend Developer, Software Engineer, React Developer, Full-Stack Developer, or Associate Software Engineer roles."
   },
 
   skills: {

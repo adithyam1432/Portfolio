@@ -76,7 +76,7 @@ export const About = () => {
                 <span>Target Opportunities</span>
               </div>
               <p className="text-sm text-slate-200 leading-relaxed font-medium">
-                Seeking Junior / Associate Data Analyst, Business Intelligence Analyst, SQL Analytics Specialist, or Entry Software Developer roles.
+                {about.targetOpportunities || "Seeking Frontend Developer, Software Engineer, React Developer, Full-Stack Developer, or Associate Software Engineer roles."}
               </p>
             </div>
           </div>

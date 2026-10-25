@@ -69,7 +69,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
                 {portfolioData.personal.displayName}
               </span>
               <span className="text-[10px] font-mono text-slate-400 font-semibold tracking-wider uppercase hidden xs:inline-block">
-                Data & Software
+                Frontend & Software
               </span>
             </div>
           </a>

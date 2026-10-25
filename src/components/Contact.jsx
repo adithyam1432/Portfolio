@@ -26,7 +26,7 @@ export const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl">
-            Open for Data Analytics, Data Engineering, SQL Database Management, and Software Engineering positions.
+            Open for Frontend Developer, Software Engineer, React Developer, and Full-Stack Engineering positions.
           </p>
         </div>
 
