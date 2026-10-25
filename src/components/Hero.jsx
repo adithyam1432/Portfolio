@@ -159,6 +159,10 @@ export const Hero = ({ onOpenResumeModal }) => {
                       }
                     }}
                     alt="Adithya Ashok Menashinakai Profile Photo"
+                    width="400"
+                    height="500"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover object-top filter contrast-[1.02] hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />

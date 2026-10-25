@@ -71,6 +71,9 @@
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  contain: layout style paint;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
   background: 
     radial-gradient(at 15% 15%, rgba(203, 213, 225, 0.95) 0px, transparent 55%),
     radial-gradient(at 85% 12%, rgba(209, 213, 219, 0.9) 0px, transparent 50%),
@@ -87,6 +90,8 @@
   filter: blur(85px);
   opacity: 0.82;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
 }
 
 .liquid-orb-1 {
@@ -371,4 +376,28 @@
   .liquid-glass-card, .liquid-glass-pill, .liquid-glass-dark {
     transition: none !important;
   }
+}
+
+/* Mobile GPU Optimization: Reduce blur radius & orb dimensions on mobile devices */
+@media (max-width: 768px) {
+  .liquid-orb {
+    filter: blur(40px);
+    opacity: 0.65;
+  }
+  .liquid-orb-1 { width: 360px; height: 360px; }
+  .liquid-orb-2 { width: 380px; height: 380px; }
+  .liquid-orb-3 { width: 360px; height: 360px; }
+  .liquid-orb-4 { width: 300px; height: 300px; }
+  .liquid-orb-5 { width: 340px; height: 340px; }
+}
+
+/* Below-The-Fold Content Visibility Optimization (Dramatically cuts initial layout & paint DOM work) */
+#skills,
+#projects,
+#experience,
+#achievements,
+#education,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
 }

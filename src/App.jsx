@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -10,8 +10,10 @@ import { Education } from './components/Education';
 import { ResumeCTA } from './components/ResumeCTA';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ProjectModal } from './components/ProjectModal';
-import { ResumeModal } from './components/ResumeModal';
+
+// Code-split modals loaded on-demand to reduce initial JavaScript execution bundle
+const ProjectModal = lazy(() => import('./components/ProjectModal').then(module => ({ default: module.ProjectModal })));
+const ResumeModal = lazy(() => import('./components/ResumeModal').then(module => ({ default: module.ResumeModal })));
 
 export function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -79,16 +81,22 @@ export function App() {
 
       </div>
 
-      {/* Interactive Modals */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      {/* Interactive Modals (Lazy-loaded chunks deferred until user interaction) */}
+      <Suspense fallback={null}>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
 
-      <ResumeModal
-        isOpen={resumeModalOpen}
-        onClose={() => setResumeModalOpen(false)}
-      />
+        {resumeModalOpen && (
+          <ResumeModal
+            isOpen={resumeModalOpen}
+            onClose={() => setResumeModalOpen(false)}
+          />
+        )}
+      </Suspense>
 
     </div>
   );

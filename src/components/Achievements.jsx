@@ -40,8 +40,11 @@ export const Achievements = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    width="600"
+                    height="450"
+                    decoding="async"
                     loading="lazy"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   
                   {/* Subtle Gradient Overlay */}
