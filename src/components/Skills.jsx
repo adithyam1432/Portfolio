@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code, Database, BarChart3, Cpu, Wrench, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Code, Database, BarChart3, Cpu, Wrench, TrendingUp, CheckCircle2, Globe, Cloud } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const Skills = () => {
@@ -8,8 +8,10 @@ export const Skills = () => {
 
   const getIcon = (name) => {
     switch (name) {
+      case 'Globe': return <Globe className="w-4 h-4 text-[#0F766E]" />;
       case 'Code': return <Code className="w-4 h-4 text-[#0F766E]" />;
       case 'Database': return <Database className="w-4 h-4 text-[#0F766E]" />;
+      case 'Cloud': return <Cloud className="w-4 h-4 text-[#0F766E]" />;
       case 'BarChart3': return <BarChart3 className="w-4 h-4 text-[#0F766E]" />;
       case 'Cpu': return <Cpu className="w-4 h-4 text-[#0F766E]" />;
       case 'Wrench': return <Wrench className="w-4 h-4 text-[#0F766E]" />;

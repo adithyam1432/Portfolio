@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
+import { Achievements } from './components/Achievements';
 import { Education } from './components/Education';
 import { ResumeCTA } from './components/ResumeCTA';
 import { Contact } from './components/Contact';
@@ -20,7 +21,7 @@ export function App() {
   // ScrollSpy to update active section in navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'achievements', 'education', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -56,6 +57,7 @@ export function App() {
         <Skills />
         <Projects onSelectProject={(project) => setSelectedProject(project)} />
         <Experience />
+        <Achievements />
         <Education />
         <ResumeCTA onOpenResumeModal={() => setResumeModalOpen(true)} />
         <Contact />

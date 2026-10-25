@@ -24,8 +24,9 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
     { id: 'skills', label: 'Skills', num: '02' },
     { id: 'projects', label: 'Projects', num: '03' },
     { id: 'experience', label: 'Experience', num: '04' },
-    { id: 'education', label: 'Education', num: '05' },
-    { id: 'contact', label: 'Contact', num: '06' },
+    { id: 'achievements', label: 'Achievements', num: '05' },
+    { id: 'education', label: 'Education', num: '06' },
+    { id: 'contact', label: 'Contact', num: '07' },
   ];
 
   return (

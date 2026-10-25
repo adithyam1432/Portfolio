@@ -21,7 +21,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const { personal, about, skills, experience, projects, education, professionalDevelopment } = portfolioData;
+  const { personal, about, skills, experience, projects, education, professionalDevelopment, achievements } = portfolioData;
 
   return (
     <div
@@ -235,6 +235,24 @@ export const ResumeModal = ({ isOpen, onClose }) => {
                   </div>
                 ))}
               </div>
+
+              {/* Achievements */}
+              {achievements && achievements.length > 0 && (
+                <div className="space-y-3">
+                  <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                    ACHIEVEMENTS
+                  </h2>
+                  {achievements.map((ach) => (
+                    <div key={ach.id} className="flex justify-between items-start text-xs sm:text-sm">
+                      <div>
+                        <span className="font-bold text-slate-900 block">• {ach.title}</span>
+                        <span className="text-xs text-slate-600">{ach.organization}</span>
+                      </div>
+                      <span className="font-mono text-xs font-bold text-[#0F766E]">{ach.year}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
             </div>
           )}

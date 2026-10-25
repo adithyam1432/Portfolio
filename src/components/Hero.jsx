@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Github, Download, ArrowDown, MapPin, CheckCircle2, FileText, ExternalLink, Sparkles, Database, Code, Award } from 'lucide-react';
+import { Mail, Linkedin, Github, Download, ArrowDown, MapPin, CheckCircle2, FileText, ExternalLink, Sparkles, Database, Code, Award, Trophy } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const Hero = ({ onOpenResumeModal }) => {
@@ -131,15 +131,15 @@ export const Hero = ({ onOpenResumeModal }) => {
             <div className="relative w-full max-w-sm sm:max-w-md">
               
               {/* Floating Pill Top Right */}
-              <div className="absolute -top-4 -right-2 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 shadow-md flex items-center gap-2 text-xs font-mono font-bold text-slate-800 animate-bounce duration-1000">
-                <Database className="w-4 h-4 text-[#0F766E]" />
-                <span>Oracle SQL & AWS S3</span>
+              <div className="absolute -top-4 -right-2 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-amber-200 shadow-md flex items-center gap-2 text-xs font-mono font-bold text-slate-900">
+                <Trophy className="w-4 h-4 text-amber-500" />
+                <span>Winner, MITK Hackathon '26</span>
               </div>
 
               {/* Floating Pill Bottom Left */}
               <div className="absolute -bottom-4 -left-2 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 shadow-md flex items-center gap-2 text-xs font-mono font-bold text-slate-800">
-                <Sparkles className="w-4 h-4 text-amber-500" />
-                <span>Pandas & Power BI</span>
+                <Database className="w-4 h-4 text-[#0F766E]" />
+                <span>Python, React & AWS (S3)</span>
               </div>
 
               {/* Profile Image Container */}
