@@ -13,12 +13,12 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 border-b border-slate-200/70 bg-white">
+    <section id="contact" className="py-20 border-b border-slate-200/60 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="space-y-2 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md liquid-glass-pill text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono">
             <Mail className="w-3.5 h-3.5 text-[#0F766E]" />
             <span>Recruiter Contact</span>
           </div>
@@ -33,7 +33,7 @@ export const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Main Direct Communication Card */}
-          <div className="lg:col-span-7 bg-[#FAF9F6] p-6 sm:p-8 rounded-2xl border border-slate-200 space-y-6">
+          <div className="lg:col-span-7 liquid-glass-card p-6 sm:p-8 rounded-3xl space-y-6">
             
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-slate-900">
@@ -47,9 +47,9 @@ export const Contact = () => {
             <div className="space-y-4">
               
               {/* Email Row with Copy Shortcut */}
-              <div className="p-4 bg-white rounded-xl border border-slate-200 flex items-center justify-between gap-3">
+              <div className="p-4 liquid-glass rounded-2xl flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2.5 rounded-lg bg-teal-50 border border-teal-100 shrink-0">
+                  <div className="p-2.5 rounded-xl liquid-glass-pill shrink-0">
                     <Mail className="w-5 h-5 text-[#0F766E]" />
                   </div>
                   <div className="truncate">
@@ -66,7 +66,7 @@ export const Contact = () => {
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={handleCopyEmail}
-                    className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors flex items-center gap-1.5 text-xs font-mono"
+                    className="p-2 rounded-xl liquid-glass-pill text-slate-700 hover:text-slate-950 transition-colors flex items-center gap-1.5 text-xs font-mono"
                     aria-label="Copy Email Address"
                   >
                     {copied ? (
@@ -84,7 +84,7 @@ export const Contact = () => {
 
                   <a
                     href={`mailto:${personal.email}`}
-                    className="p-2 rounded-lg bg-[#0F766E] text-white hover:bg-teal-700 transition-colors text-xs font-semibold flex items-center gap-1"
+                    className="p-2 rounded-xl bg-[#0F766E] text-white hover:bg-teal-700 transition-colors text-xs font-semibold flex items-center gap-1 shadow-xs"
                     aria-label="Send Email"
                   >
                     <Send className="w-3.5 h-3.5" />
@@ -93,9 +93,9 @@ export const Contact = () => {
               </div>
 
               {/* Phone Row */}
-              <div className="p-4 bg-white rounded-xl border border-slate-200 flex items-center justify-between gap-3">
+              <div className="p-4 liquid-glass rounded-2xl flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 shrink-0">
+                  <div className="p-2.5 rounded-xl liquid-glass-pill shrink-0">
                     <Phone className="w-5 h-5 text-slate-700" />
                   </div>
                   <div>
@@ -111,15 +111,16 @@ export const Contact = () => {
 
                 <a
                   href={`tel:${personal.phone}`}
-                  className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"
+                  aria-label={`Call Now - ${personal.phone}`}
+                  className="px-3 py-1.5 rounded-xl liquid-glass-pill hover:border-teal-500/40 text-slate-800 text-xs font-semibold transition-colors"
                 >
                   Call Now
                 </a>
               </div>
 
               {/* Location Row */}
-              <div className="p-4 bg-white rounded-xl border border-slate-200 flex items-center gap-3">
-                <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 shrink-0">
+              <div className="p-4 liquid-glass rounded-2xl flex items-center gap-3">
+                <div className="p-2.5 rounded-xl liquid-glass-pill shrink-0">
                   <MapPin className="w-5 h-5 text-slate-700" />
                 </div>
                 <div>
@@ -137,20 +138,21 @@ export const Contact = () => {
           {/* Social Profiles & Quick Response Guarantee */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
-              <h4 className="font-heading font-bold text-slate-900 text-base">
+            <div className="liquid-glass-card p-6 rounded-3xl space-y-4">
+              <h3 className="font-heading font-bold text-slate-900 text-base">
                 Professional Network
-              </h4>
+              </h3>
               
               <div className="space-y-3">
                 <a
                   href={personal.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-xl border border-slate-200 hover:border-[#0A66C2] bg-white flex items-center justify-between group transition-all"
+                  aria-label="LinkedIn Profile - Adithya Menashinakai (opens in new tab)"
+                  className="p-4 rounded-2xl liquid-glass hover:border-[#0A66C2]/50 flex items-center justify-between group transition-all"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-blue-50 text-[#0A66C2]">
+                    <div className="p-2 rounded-xl bg-blue-500/10 text-[#0A66C2] border border-blue-500/20">
                       <Linkedin className="w-5 h-5" />
                     </div>
                     <div>
@@ -169,10 +171,11 @@ export const Contact = () => {
                   href={personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-xl border border-slate-200 hover:border-slate-900 bg-white flex items-center justify-between group transition-all"
+                  aria-label="GitHub Profile - Adithya Menashinakai (opens in new tab)"
+                  className="p-4 rounded-2xl liquid-glass hover:border-slate-800/50 flex items-center justify-between group transition-all"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-slate-100 text-slate-900">
+                    <div className="p-2 rounded-xl bg-slate-800/10 text-slate-900 border border-slate-700/20">
                       <Github className="w-5 h-5" />
                     </div>
                     <div>
@@ -190,10 +193,10 @@ export const Contact = () => {
             </div>
 
             {/* Recruiter Guarantee Card */}
-            <div className="p-5 rounded-2xl bg-slate-900 text-white space-y-2">
-              <div className="text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">
+            <div className="p-5 rounded-2xl liquid-glass-dark text-white space-y-2">
+              <h4 className="text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">
                 Response SLA
-              </div>
+              </h4>
               <p className="text-xs text-slate-300 leading-relaxed font-medium">
                 I monitor email continuously and respond to all recruiter inquiries within 24 business hours.
               </p>

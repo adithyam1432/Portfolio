@@ -47,10 +47,10 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`liquid-glass-nav transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FAF9F6]/90 backdrop-blur-md border-b border-slate-200/80 shadow-2xs py-3'
-            : 'bg-transparent py-4 sm:py-6'
+            ? 'is-scrolled py-2 sm:py-2.5'
+            : 'py-2.5 sm:py-3.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -75,7 +75,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/80 p-1.5 rounded-full border border-slate-200/80 shadow-2xs backdrop-blur-xs">
+          <nav aria-label="Desktop Primary Navigation" className="hidden md:flex items-center gap-1 liquid-glass-nav-pill p-1.5 rounded-full">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -85,7 +85,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
                     isActive
                       ? 'bg-slate-900 text-white shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
                   }`}
                 >
                   <span className={`text-[10px] font-mono ${isActive ? 'text-teal-400' : 'text-slate-400'}`}>
@@ -101,7 +101,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
           <div className="flex items-center gap-2.5">
             <button
               onClick={onOpenResumeModal}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-200/90 shadow-2xs transition-all hover:border-slate-300"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-800 liquid-glass-nav-pill hover:bg-white/70 transition-all"
             >
               <FileText className="w-3.5 h-3.5 text-[#0F766E]" />
               <span>Preview Resume</span>
@@ -110,6 +110,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
             <a
               href={portfolioData.personal.resumePdf}
               download="Adithya_Menashinakai_Resume.pdf"
+              aria-label="Download resume PDF - Adithya Menashinakai"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#0F766E] hover:bg-teal-700 shadow-sm transition-all hover:shadow-md active:scale-95"
             >
               <Download className="w-3.5 h-3.5" />
@@ -122,6 +123,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
               className="md:hidden p-2 rounded-xl text-slate-700 bg-white border border-slate-200 shadow-2xs hover:bg-slate-100"
               aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
               aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav-drawer"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-slate-900" /> : <Menu className="w-5 h-5 text-slate-900" />}
             </button>
@@ -131,7 +133,7 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
 
         {/* Mobile Slide-Over Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-[65px] bg-[#FAF9F6]/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl p-6 space-y-4 animate-in slide-in-from-top-4 duration-200">
+          <div id="mobile-nav-drawer" className="md:hidden fixed inset-x-0 top-[65px] bg-white/95 backdrop-blur-2xl border-b border-white/60 shadow-2xl p-6 space-y-4 animate-in slide-in-from-top-4 duration-200">
             <div className="grid grid-cols-2 gap-2">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
@@ -142,8 +144,8 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`p-3 rounded-xl text-xs font-semibold flex items-center justify-between border transition-all ${
                       isActive
-                        ? 'bg-slate-900 text-white border-slate-900'
-                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                        ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
+                        : 'liquid-glass-pill text-slate-700 hover:text-slate-950 hover:bg-white'
                     }`}
                   >
                     <span className="font-mono text-[10px] text-teal-500">{item.num}</span>
@@ -154,13 +156,14 @@ export const Navbar = ({ activeSection, onOpenResumeModal }) => {
               })}
             </div>
 
-            <div className="pt-2 border-t border-slate-200 flex flex-col gap-2">
+            <div className="pt-2 border-t border-slate-200/80 flex flex-col gap-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenResumeModal();
                 }}
-                className="w-full py-2.5 px-4 bg-white border border-slate-300 text-slate-800 text-xs font-bold rounded-xl flex items-center justify-center gap-2"
+                aria-label="Preview Resume Online in interactive modal"
+                className="w-full py-2.5 px-4 liquid-glass-pill text-slate-800 text-xs font-bold rounded-xl flex items-center justify-center gap-2 hover:text-slate-950 transition-all shadow-xs"
               >
                 <FileText className="w-4 h-4 text-[#0F766E]" />
                 Preview Resume Online

@@ -29,7 +29,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl max-w-4xl w-full h-[90vh] flex flex-col border border-slate-200 shadow-2xl relative overflow-hidden"
+        className="bg-white/95 backdrop-blur-xl rounded-3xl max-w-4xl w-full h-[90vh] flex flex-col border border-white/60 shadow-2xl relative overflow-hidden"
         role="dialog"
         aria-modal="true"
         aria-labelledby="resume-modal-title"
@@ -56,6 +56,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
             <div className="flex bg-slate-800 p-1 rounded-lg border border-slate-700">
               <button
                 onClick={() => setActiveTab('pdf')}
+                aria-label="Switch to PDF View"
                 className={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${
                   activeTab === 'pdf' ? 'bg-[#0F766E] text-white' : 'text-slate-400 hover:text-white'
                 }`}
@@ -64,6 +65,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               </button>
               <button
                 onClick={() => setActiveTab('document')}
+                aria-label="Switch to Text Resume view"
                 className={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${
                   activeTab === 'document' ? 'bg-[#0F766E] text-white' : 'text-slate-400 hover:text-white'
                 }`}
@@ -76,6 +78,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               href={personal.resumePdf}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Open PDF Resume in new tab"
               className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors text-xs font-semibold hidden sm:flex items-center gap-1"
               title="Open PDF in New Tab"
             >
@@ -85,6 +88,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
             <a
               href={personal.resumePdf}
               download="Adithya_Menashinakai_Resume.pdf"
+              aria-label="Download PDF Resume"
               className="px-3 py-2 rounded-lg bg-[#0F766E] hover:bg-teal-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs"
             >
               <Download className="w-3.5 h-3.5" />
@@ -139,9 +143,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               
               {/* Document Header */}
               <div className="border-b border-slate-200 pb-6 text-center space-y-2">
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                   {personal.name}
-                </h1>
+                </h3>
                 <p className="text-sm font-mono text-[#0F766E] font-bold">
                   {personal.email} • {personal.phone} • {personal.location}
                 </p>
@@ -154,9 +158,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Summary */}
               <div className="space-y-2">
-                <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
                   PROFESSIONAL SUMMARY
-                </h2>
+                </h4>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                   {personal.summary}
                 </p>
@@ -164,9 +168,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Skills */}
               <div className="space-y-2">
-                <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
                   TECHNICAL SKILLS
-                </h2>
+                </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                   {skills.categories.map((cat) => (
                     <div key={cat.id} className="p-2.5 bg-slate-50 rounded-lg border border-slate-200/80">
@@ -179,9 +183,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Experience */}
               <div className="space-y-3">
-                <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
                   INTERNSHIP / WORK EXPERIENCE
-                </h2>
+                </h4>
                 {experience.map((exp) => (
                   <div key={exp.id} className="space-y-1 text-xs sm:text-sm">
                     <div className="flex justify-between font-bold text-slate-900">
@@ -200,9 +204,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Projects */}
               <div className="space-y-3">
-                <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
                   PROJECTS
-                </h2>
+                </h4>
                 {projects.map((proj) => (
                   <div key={proj.id} className="space-y-1 text-xs sm:text-sm">
                     <div className="flex justify-between font-bold text-slate-900">
@@ -219,9 +223,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Education */}
               <div className="space-y-3">
-                <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
                   EDUCATION
-                </h2>
+                </h4>
                 {education.map((edu) => (
                   <div key={edu.id} className="flex justify-between text-xs sm:text-sm">
                     <div>
@@ -239,9 +243,9 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               {/* Achievements */}
               {achievements && achievements.length > 0 && (
                 <div className="space-y-3">
-                  <h2 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                  <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
                     ACHIEVEMENTS
-                  </h2>
+                  </h4>
                   {achievements.map((ach) => (
                     <div key={ach.id} className="flex justify-between items-start text-xs sm:text-sm">
                       <div>
@@ -266,6 +270,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
           </div>
           <button
             onClick={onClose}
+            aria-label="Close Preview"
             className="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded text-slate-200 text-xs font-bold"
           >
             Close Preview

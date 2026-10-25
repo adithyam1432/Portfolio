@@ -9,12 +9,12 @@ export const Achievements = () => {
   if (!achievements || achievements.length === 0) return null;
 
   return (
-    <section id="achievements" className="py-20 border-b border-slate-200/70 bg-[#FAF9F6]">
+    <section id="achievements" className="py-20 border-b border-slate-200/60 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="space-y-2 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white border border-slate-200 text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md liquid-glass-pill text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono shadow-2xs">
             <Trophy className="w-3.5 h-3.5 text-amber-500" />
             <span>Honors & Achievements</span>
           </div>
@@ -31,7 +31,7 @@ export const Achievements = () => {
           {achievements.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              className="liquid-glass-card rounded-3xl overflow-hidden shadow-lg"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
                 
@@ -58,8 +58,9 @@ export const Achievements = () => {
                   {/* Expand Image Button */}
                   <button
                     onClick={() => setSelectedImage(item.image)}
-                    className="absolute bottom-4 right-4 z-10 p-2.5 rounded-xl bg-white/90 hover:bg-white text-slate-900 shadow-md backdrop-blur-xs transition-transform active:scale-95 flex items-center gap-1.5 text-xs font-semibold"
+                    className="absolute bottom-4 right-4 z-10 p-2.5 rounded-xl liquid-glass-pill text-slate-900 shadow-md transition-transform active:scale-95 flex items-center gap-1.5 text-xs font-semibold"
                     title="View Full Resolution Photo"
+                    aria-label="View Photo - Expand full resolution ceremony image"
                   >
                     <Maximize2 className="w-3.5 h-3.5" />
                     <span>View Photo</span>
@@ -75,8 +76,8 @@ export const Achievements = () => {
                   <div className="space-y-4">
                     
                     {/* Badge & Year */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
-                      <span className="px-2.5 py-1 rounded bg-teal-50 text-[#0F766E] border border-teal-200/80 text-[11px] font-mono font-bold uppercase tracking-wider">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/70 pb-3">
+                      <span className="px-3 py-1 rounded-full liquid-glass-pill text-[#0F766E] text-[11px] font-mono font-bold uppercase tracking-wider">
                         National Level Competition
                       </span>
                       <div className="flex items-center gap-1.5 text-xs font-mono font-semibold text-slate-500">

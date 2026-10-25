@@ -6,12 +6,12 @@ export const Education = () => {
   const { education } = portfolioData;
 
   return (
-    <section id="education" className="py-20 border-b border-slate-200/70 bg-white">
+    <section id="education" className="py-20 border-b border-slate-200/60 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="space-y-2 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md liquid-glass-pill text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono">
             <GraduationCap className="w-3.5 h-3.5 text-[#0F766E]" />
             <span>Academic Background</span>
           </div>
@@ -28,26 +28,22 @@ export const Education = () => {
           {education.map((item) => (
             <div
               key={item.id}
-              className={`rounded-2xl p-6 border flex flex-col justify-between space-y-6 transition-all ${
-                item.status === 'Pursuing'
-                  ? 'border-slate-900 bg-[#FAF9F6] shadow-sm'
-                  : 'border-slate-200 bg-white hover:border-slate-300'
-              }`}
+              className="liquid-glass-card rounded-3xl p-6 flex flex-col justify-between space-y-6"
             >
               <div className="space-y-4">
                 
                 {/* Status & Period */}
                 <div className="flex items-center justify-between">
                   <span
-                    className={`px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold uppercase ${
+                    className={`px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase ${
                       item.status === 'Pursuing'
-                        ? 'bg-[#0F766E] text-white'
-                        : 'bg-slate-100 text-slate-700 border border-slate-200'
+                        ? 'bg-[#0F766E] text-white shadow-xs'
+                        : 'liquid-glass-pill text-slate-700'
                     }`}
                   >
                     {item.status}
                   </span>
-                  <div className="flex items-center gap-1 text-xs font-mono text-slate-500">
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-slate-600 liquid-glass-pill px-3 py-1 rounded-xl">
                     <Calendar className="w-3.5 h-3.5 text-slate-400" />
                     <span>{item.period}</span>
                   </div>
@@ -69,8 +65,8 @@ export const Education = () => {
 
                 {/* Performance Metric Pill (CGPA) */}
                 {item.score && (
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-teal-50 border border-teal-200 text-[#0F766E] text-xs font-mono font-bold">
-                    <Award className="w-3.5 h-3.5" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl liquid-glass-pill text-[#0F766E] text-xs font-mono font-bold">
+                    <Award className="w-3.5 h-3.5 text-amber-500" />
                     <span>{item.score}</span>
                   </div>
                 )}

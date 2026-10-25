@@ -25,31 +25,32 @@ export const Skills = () => {
     : categories.filter(cat => cat.id === selectedCategory);
 
   return (
-    <section id="skills" className="py-20 border-b border-slate-200/70 bg-[#FAF9F6]">
+    <section id="skills" className="py-20 border-b border-slate-200/60 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white border border-slate-200 text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md liquid-glass-pill text-slate-700 text-xs font-semibold uppercase tracking-wider font-mono">
               <span>Technical Skills</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Verified Technical Stack & Competencies
             </h2>
             <p className="text-sm sm:text-base text-slate-600 max-w-xl">
-              Organized directly from verified resume experience in data analytics, database management, and software tools.
+              Organized directly from verified resume experience in web development, database management, cloud systems, and software engineering.
             </p>
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 bg-slate-200/60 p-1 rounded-xl border border-slate-300/50">
+          <div className="flex flex-wrap gap-1.5 liquid-glass-pill p-1.5 rounded-2xl" role="group" aria-label="Skill category filters">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              aria-pressed={selectedCategory === 'all'}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                 selectedCategory === 'all'
                   ? 'bg-slate-900 text-white shadow-xs'
-                  : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200'
+                  : 'text-slate-700 hover:text-slate-900 hover:bg-white/60'
               }`}
             >
               All Categories
@@ -58,10 +59,11 @@ export const Skills = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                aria-pressed={selectedCategory === cat.id}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
                   selectedCategory === cat.id
                     ? 'bg-slate-900 text-white shadow-xs font-semibold'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
                 }`}
               >
                 {cat.name}
@@ -75,38 +77,39 @@ export const Skills = () => {
           {filteredCategories.map((cat) => (
             <div
               key={cat.id}
-              className="bg-white rounded-xl p-6 border border-slate-200 shadow-2xs hover:shadow-md transition-all hover:border-slate-300 space-y-4 flex flex-col justify-between"
+              className="liquid-glass-card rounded-3xl p-6 sm:p-7 space-y-5 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-teal-50 border border-teal-100">
+                <div className="flex items-center justify-between border-b border-white/70 pb-3.5 mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-2xl liquid-glass-pill shadow-xs">
                       {getIcon(cat.icon)}
                     </div>
                     <h3 className="font-heading font-bold text-slate-900 text-base">
                       {cat.name}
                     </h3>
                   </div>
-                  <span className="text-xs font-mono font-medium text-slate-400">
+                  <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-full liquid-glass-pill text-slate-500">
                     {cat.skills.length} item{cat.skills.length > 1 ? 's' : ''}
                   </span>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-50 border border-slate-200/80 text-slate-800 text-xs font-mono font-medium hover:border-[#0F766E] hover:text-[#0F766E] transition-colors"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl liquid-glass-pill text-slate-800 text-xs font-mono font-medium hover:border-[#0F766E] hover:text-[#0F766E] transition-all cursor-default"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#0F766E]"></span>
+                      <span className="w-2 h-2 rounded-full bg-[#0F766E] shadow-[0_0_8px_rgba(15,118,110,0.65)]"></span>
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-mono">
-                Source: Verified Resume Skill Matrix
+              <div className="pt-3.5 border-t border-white/70 text-[11px] text-slate-400 font-mono flex items-center justify-between">
+                <span>Verified Technical Matrix</span>
+                <span className="text-teal-600/70 font-semibold">• Active Stack</span>
               </div>
             </div>
           ))}

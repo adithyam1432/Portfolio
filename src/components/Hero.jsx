@@ -6,11 +6,11 @@ export const Hero = ({ onOpenResumeModal }) => {
   const { personal } = portfolioData;
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-[#FAF9F6] via-white to-[#FAF9F6]">
+    <section id="hero" className="relative pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-24 lg:pb-24 overflow-hidden border-b border-slate-200/60 bg-transparent">
       
       {/* Background Decorative Accent Elements */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute top-20 right-10 w-96 h-96 bg-slate-200/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-slate-100/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -24,7 +24,7 @@ export const Hero = ({ onOpenResumeModal }) => {
                 00 / PORTFOLIO
               </span>
               
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-semibold shadow-2xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full liquid-glass-pill text-teal-800 text-xs font-semibold shadow-2xs">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#0F766E]"></span>
@@ -56,12 +56,12 @@ export const Hero = ({ onOpenResumeModal }) => {
 
             {/* Recruiter Quick Info Grid */}
             <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-600 font-medium pt-1">
-              <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200/90 shadow-2xs">
+              <div className="flex items-center gap-1.5 liquid-glass-pill px-3 py-1.5 rounded-lg font-medium text-slate-700">
                 <MapPin className="w-4 h-4 text-[#0F766E]" />
                 <span>{personal.location}</span>
               </div>
 
-              <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200/90 shadow-2xs font-mono">
+              <div className="flex items-center gap-1.5 liquid-glass-pill px-3 py-1.5 rounded-lg font-mono text-slate-700">
                 <Mail className="w-4 h-4 text-[#0F766E]" />
                 <a href={`mailto:${personal.email}`} className="hover:underline hover:text-[#0F766E] transition-colors">
                   {personal.email}
@@ -74,6 +74,7 @@ export const Hero = ({ onOpenResumeModal }) => {
               <a
                 href={personal.resumePdf}
                 download="Adithya_Menashinakai_Resume.pdf"
+                aria-label="Download Resume - Adithya Menashinakai PDF"
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 text-white font-bold text-sm hover:bg-[#0F766E] transition-all shadow-md hover:shadow-lg focus:ring-2 focus:ring-slate-900 active:scale-95"
               >
                 <Download className="w-4 h-4" />
@@ -82,7 +83,8 @@ export const Hero = ({ onOpenResumeModal }) => {
 
               <button
                 onClick={onOpenResumeModal}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-slate-800 font-semibold text-sm border border-slate-300 hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs"
+                aria-label="Online Resume Preview - Open interactive modal"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl liquid-glass-pill text-slate-800 font-semibold text-sm hover:bg-white/90 transition-all shadow-2xs"
               >
                 <FileText className="w-4 h-4 text-[#0F766E]" />
                 <span>Online Resume Preview</span>
@@ -90,6 +92,7 @@ export const Hero = ({ onOpenResumeModal }) => {
 
               <a
                 href="#projects"
+                aria-label="View Projects - Scroll to featured projects section"
                 className="inline-flex items-center gap-1.5 px-4 py-3.5 text-xs font-bold font-mono text-slate-500 hover:text-slate-900 transition-colors uppercase tracking-wider"
               >
                 <span>View Projects</span>
@@ -98,14 +101,15 @@ export const Hero = ({ onOpenResumeModal }) => {
             </div>
 
             {/* Social Proof Links */}
-            <div className="pt-4 border-t border-slate-200/80 flex flex-wrap items-center gap-3">
+            <div className="pt-4 border-t border-slate-200/60 flex flex-wrap items-center gap-3">
               <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">Connect:</span>
               
               <a
                 href={personal.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 text-xs font-semibold hover:border-[#0A66C2] hover:text-[#0A66C2] transition-all shadow-2xs"
+                aria-label="LinkedIn Profile - Adithya Menashinakai (opens in new tab)"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg liquid-glass-pill text-slate-700 text-xs font-semibold hover:text-[#0A66C2] transition-all"
               >
                 <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
                 <span>LinkedIn Profile</span>
@@ -116,7 +120,8 @@ export const Hero = ({ onOpenResumeModal }) => {
                 href={personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 text-xs font-semibold hover:border-slate-900 hover:text-slate-900 transition-all shadow-2xs"
+                aria-label="GitHub Repos - Adithya Menashinakai (opens in new tab)"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg liquid-glass-pill text-slate-700 text-xs font-semibold hover:text-slate-900 transition-all"
               >
                 <Github className="w-3.5 h-3.5 text-slate-900" />
                 <span>GitHub Repos</span>
@@ -131,19 +136,19 @@ export const Hero = ({ onOpenResumeModal }) => {
             <div className="relative w-full max-w-sm sm:max-w-md">
               
               {/* Floating Pill Top Right */}
-              <div className="absolute -top-4 -right-2 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-amber-200 shadow-md flex items-center gap-2 text-xs font-mono font-bold text-slate-900">
+              <div className="absolute -top-4 -right-2 z-20 liquid-glass-pill px-4 py-2 rounded-2xl flex items-center gap-2 text-xs font-mono font-bold text-slate-900 shadow-xl">
                 <Trophy className="w-4 h-4 text-amber-500" />
                 <span>Winner, MITK Hackathon '26</span>
               </div>
 
               {/* Floating Pill Bottom Left */}
-              <div className="absolute -bottom-4 -left-2 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 shadow-md flex items-center gap-2 text-xs font-mono font-bold text-slate-800">
+              <div className="absolute -bottom-4 -left-2 z-20 liquid-glass-pill px-4 py-2 rounded-2xl flex items-center gap-2 text-xs font-mono font-bold text-slate-800 shadow-xl">
                 <Database className="w-4 h-4 text-[#0F766E]" />
                 <span>Python, React & AWS (S3)</span>
               </div>
 
               {/* Profile Image Container */}
-              <div className="relative bg-white p-3.5 rounded-3xl border border-slate-200 shadow-xl">
+              <div className="relative liquid-glass-card p-3.5 rounded-3xl shadow-xl">
                 <div className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-slate-100 border border-slate-200/80">
                   <img
                     src={personal.profilePhoto}

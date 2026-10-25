@@ -42,13 +42,24 @@ export function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F6] text-[#0F172A] selection:bg-[#0F766E]/20 selection:text-[#0F766E]">
+    <div className="min-h-screen relative flex flex-col text-[#0F172A] selection:bg-[#0F766E]/20 selection:text-[#0F766E]">
       
-      {/* Sticky Navigation Header */}
-      <Navbar
-        activeSection={activeSection}
-        onOpenResumeModal={() => setResumeModalOpen(true)}
-      />
+      {/* Ambient Liquid Fluid Mesh Canvas */}
+      <div className="liquid-mesh-canvas" aria-hidden="true">
+        <div className="liquid-orb liquid-orb-1" />
+        <div className="liquid-orb liquid-orb-2" />
+        <div className="liquid-orb liquid-orb-3" />
+        <div className="liquid-orb liquid-orb-4" />
+        <div className="liquid-orb liquid-orb-5" />
+      </div>
+
+      {/* Foreground Content Stack */}
+      <div className="relative z-10 flex flex-col flex-1">
+        {/* Sticky Navigation Header */}
+        <Navbar
+          activeSection={activeSection}
+          onOpenResumeModal={() => setResumeModalOpen(true)}
+        />
 
       {/* Main Content Sections */}
       <main id="main-content" className="flex-1">
@@ -65,6 +76,8 @@ export function App() {
 
       {/* Site Footer */}
       <Footer />
+
+      </div>
 
       {/* Interactive Modals */}
       <ProjectModal
