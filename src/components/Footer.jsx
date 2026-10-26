@@ -22,7 +22,7 @@ export const Footer = () => {
               <p className="font-heading font-bold text-slate-900 text-sm">
                 {portfolioData.personal.name}
               </p>
-              <p className="text-slate-500 font-mono text-[11px]">
+              <p className="text-slate-700 font-semibold font-mono text-[11px]">
                 {portfolioData.personal.title}
               </p>
             </div>
@@ -70,7 +70,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-slate-200/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 font-mono text-[11px]">
+        <div className="pt-6 border-t border-slate-200/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-700 font-mono text-[11px] font-medium">
           <div>
             © {new Date().getFullYear()} Adithya Ashok Menashinakai. All rights reserved.
           </div>

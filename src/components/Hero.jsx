@@ -46,10 +46,10 @@ export const Hero = ({ onOpenResumeModal }) => {
 
             {/* Concise Recruiter Value Proposition */}
             <div className="space-y-2">
-              <p className="text-[#0F766E] font-semibold text-sm sm:text-base font-mono">
+              <p className="text-teal-800 font-bold text-sm sm:text-base font-mono">
                 {personal.greeting}
               </p>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl font-normal">
                 {personal.summary}
               </p>
             </div>
@@ -93,16 +93,16 @@ export const Hero = ({ onOpenResumeModal }) => {
               <a
                 href="#projects"
                 aria-label="View Projects - Scroll to featured projects section"
-                className="inline-flex items-center gap-1.5 px-4 py-3.5 text-xs font-bold font-mono text-slate-500 hover:text-slate-900 transition-colors uppercase tracking-wider"
+                className="inline-flex items-center gap-1.5 px-4 py-3.5 text-xs font-bold font-mono text-slate-700 hover:text-slate-950 transition-colors uppercase tracking-wider"
               >
                 <span>View Projects</span>
-                <ArrowDown className="w-3.5 h-3.5 text-slate-400" />
+                <ArrowDown className="w-3.5 h-3.5 text-slate-600" />
               </a>
             </div>
 
             {/* Social Proof Links */}
             <div className="pt-4 border-t border-slate-200/60 flex flex-wrap items-center gap-3">
-              <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">Connect:</span>
+              <span className="text-xs font-mono font-bold text-slate-700 uppercase tracking-widest">Connect:</span>
               
               <a
                 href={personal.linkedIn}
@@ -113,7 +113,7 @@ export const Hero = ({ onOpenResumeModal }) => {
               >
                 <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
                 <span>LinkedIn Profile</span>
-                <ExternalLink className="w-3 h-3 text-slate-400" />
+                <ExternalLink className="w-3 h-3 text-slate-600" />
               </a>
 
               <a
@@ -125,7 +125,7 @@ export const Hero = ({ onOpenResumeModal }) => {
               >
                 <Github className="w-3.5 h-3.5 text-slate-900" />
                 <span>GitHub Repos</span>
-                <ExternalLink className="w-3 h-3 text-slate-400" />
+                <ExternalLink className="w-3 h-3 text-slate-600" />
               </a>
             </div>
 
@@ -150,29 +150,36 @@ export const Hero = ({ onOpenResumeModal }) => {
               {/* Profile Image Container */}
               <div className="relative liquid-glass-card p-3.5 rounded-3xl shadow-xl">
                 <div className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-slate-100 border border-slate-200/80">
-                  <img
-                    src={personal.profilePhoto}
-                    onError={(e) => {
-                      if (!e.target.dataset.fallbackTried) {
-                        e.target.dataset.fallbackTried = 'true';
-                        e.target.src = './assets/profile.jpg';
-                      }
-                    }}
-                    alt="Adithya Ashok Menashinakai Profile Photo"
-                    width="400"
-                    height="500"
-                    fetchPriority="high"
-                    decoding="async"
-                    className="w-full h-full object-cover object-top filter contrast-[1.02] hover:scale-105 transition-transform duration-500"
-                    loading="eager"
-                  />
+                  <picture className="w-full h-full block">
+                    <source
+                      type="image/webp"
+                      srcSet="./assets/frameimg-400w.webp 400w, ./assets/frameimg.webp 723w"
+                      sizes="(max-width: 640px) 400px, 450px"
+                    />
+                    <img
+                      src={personal.profilePhoto}
+                      onError={(e) => {
+                        if (!e.target.dataset.fallbackTried) {
+                          e.target.dataset.fallbackTried = 'true';
+                          e.target.src = './assets/profile.jpg';
+                        }
+                      }}
+                      alt="Adithya Ashok Menashinakai Profile Photo"
+                      width="400"
+                      height="500"
+                      fetchPriority="high"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top filter contrast-[1.02] hover:scale-105 transition-transform duration-500"
+                      loading="eager"
+                    />
+                  </picture>
                   
                   {/* Subtle Gradient Overlay */}
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent p-5 flex flex-col justify-end text-white">
                     <p className="font-heading font-extrabold text-base tracking-wide">
                       Adithya Menashinakai
                     </p>
-                    <p className="text-xs text-slate-300 font-mono">
+                    <p className="text-xs text-slate-200 font-mono">
                       MCA Pursuing (2025–2027) • Chetan Business School
                     </p>
                   </div>

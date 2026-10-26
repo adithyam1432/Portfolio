@@ -15,7 +15,7 @@ export const ProjectModal = ({ project, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100/80 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
           aria-label="Close Project Modal"
         >
           <X className="w-5 h-5" />
@@ -23,20 +23,20 @@ export const ProjectModal = ({ project, onClose }) => {
 
         {/* Modal Header */}
         <div className="space-y-2 pr-8">
-          <span className="px-3 py-1 rounded-full liquid-glass-pill text-[#0F766E] text-xs font-mono font-semibold uppercase">
+          <span className="px-3 py-1 rounded-full liquid-glass-pill text-teal-800 text-xs font-mono font-bold uppercase">
             {project.category}
           </span>
           <h2 id="modal-title" className="text-2xl font-bold text-slate-900 tracking-tight">
             {project.title}
           </h2>
-          <p className="text-sm font-mono text-slate-500">
+          <p className="text-sm font-mono text-slate-700 font-semibold">
             {project.subtitle}
           </p>
         </div>
 
         {/* Overview */}
         <div className="space-y-3">
-          <h3 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
+          <h3 className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">
             Project Overview
           </h3>
           <p className="text-sm text-slate-600 leading-relaxed">
@@ -63,7 +63,7 @@ export const ProjectModal = ({ project, onClose }) => {
 
         {/* Technologies Used */}
         <div className="space-y-2">
-          <h3 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
+          <h3 className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">
             Technologies & Tools
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -106,7 +106,7 @@ export const ProjectModal = ({ project, onClose }) => {
 
           <button
             onClick={onClose}
-            className="ml-auto px-4 py-2.5 text-xs text-slate-500 font-medium hover:text-slate-900"
+            className="ml-auto px-4 py-2.5 text-xs text-slate-700 font-semibold hover:text-slate-950"
           >
             Close Window
           </button>

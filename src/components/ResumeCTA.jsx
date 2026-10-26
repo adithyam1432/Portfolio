@@ -11,8 +11,8 @@ export const ResumeCTA = ({ onOpenResumeModal }) => {
         <div className="liquid-glass-dark rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
           
           <div className="space-y-3 max-w-2xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-teal-500/15 border border-teal-400/40 text-teal-300 text-xs font-mono font-semibold uppercase tracking-wider backdrop-blur-md">
-              <FileText className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-teal-500/15 border border-teal-400/40 text-teal-200 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
+              <FileText className="w-3.5 h-3.5 text-teal-300" />
               <span>Recruiter Resource</span>
             </div>
 
@@ -20,13 +20,13 @@ export const ResumeCTA = ({ onOpenResumeModal }) => {
               Ready to Review Full Resume & Credential Verification?
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
               Download the official, single-source PDF resume containing full academic history, enterprise SQL & AWS analytics internship details, and technical stack matrix.
             </p>
 
-            <div className="pt-2 flex flex-wrap justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-mono text-slate-300">
+            <div className="pt-2 flex flex-wrap justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-mono text-slate-200">
               <span className="flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-300" />
                 Format: Clean PDF (227 KB)
               </span>
               <span>•</span>
@@ -52,7 +52,7 @@ export const ResumeCTA = ({ onOpenResumeModal }) => {
               aria-label="Preview resume online in interactive modal"
               className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-all border border-white/20 flex items-center justify-center gap-2 backdrop-blur-md"
             >
-              <FileText className="w-4 h-4 text-teal-400" />
+              <FileText className="w-4 h-4 text-teal-300" />
               <span>Preview Online</span>
             </button>
 

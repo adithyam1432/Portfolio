@@ -22,24 +22,31 @@ export function App() {
 
   // ScrollSpy to update active section in navbar
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'achievements', 'education', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'achievements', 'education', 'contact'];
+          const scrollPosition = window.scrollY + 200;
 
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
+          for (const sectionId of sections) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              const top = element.offsetTop;
+              const height = element.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < top + height) {
+                setActiveSection((prev) => (prev !== sectionId ? sectionId : prev));
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

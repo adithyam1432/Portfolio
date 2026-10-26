@@ -65,23 +65,11 @@ describe('Navbar Component', () => {
     expect(projectsLinks[0].className).toContain('text-white');
   });
 
-  it('triggers onOpenResumeModal callback when desktop preview button is clicked', () => {
+  it('does not render desktop preview or resume PDF download buttons in navbar', () => {
     render(<Navbar activeSection="hero" onOpenResumeModal={mockOpenResumeModal} />);
 
-    const previewButton = screen.getByRole('button', { name: /Preview Resume/i });
-    expect(previewButton).toBeInTheDocument();
-
-    fireEvent.click(previewButton);
-    expect(mockOpenResumeModal).toHaveBeenCalledTimes(1);
-  });
-
-  it('renders download resume PDF link with correct attributes', () => {
-    render(<Navbar activeSection="hero" onOpenResumeModal={mockOpenResumeModal} />);
-
-    const downloadLink = screen.getByRole('link', { name: /Resume PDF/i });
-    expect(downloadLink).toBeInTheDocument();
-    expect(downloadLink).toHaveAttribute('href', portfolioData.personal.resumePdf);
-    expect(downloadLink).toHaveAttribute('download', 'Adithya_Menashinakai_Resume.pdf');
+    expect(screen.queryByRole('button', { name: /^Preview Resume$/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /Resume PDF/i })).not.toBeInTheDocument();
   });
 
   it('toggles mobile drawer on hamburger button click and triggers resume modal from drawer', () => {

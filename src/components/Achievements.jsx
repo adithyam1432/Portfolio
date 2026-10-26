@@ -37,15 +37,22 @@ export const Achievements = () => {
                 
                 {/* Photo Column */}
                 <div className="lg:col-span-6 relative bg-slate-900 overflow-hidden min-h-[280px] sm:min-h-[360px] flex items-center justify-center group">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    width="600"
-                    height="450"
-                    decoding="async"
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
+                  <picture className="w-full h-full block">
+                    <source
+                      type="image/webp"
+                      srcSet="./assets/hackathon_winner-600w.webp 600w, ./assets/hackathon_winner.webp 1024w"
+                      sizes="(max-width: 640px) 600px, 800px"
+                    />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      width="600"
+                      height="450"
+                      decoding="async"
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </picture>
                   
                   {/* Subtle Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
@@ -80,11 +87,11 @@ export const Achievements = () => {
                     
                     {/* Badge & Year */}
                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/70 pb-3">
-                      <span className="px-3 py-1 rounded-full liquid-glass-pill text-[#0F766E] text-[11px] font-mono font-bold uppercase tracking-wider">
+                      <span className="px-3 py-1 rounded-full liquid-glass-pill text-teal-800 text-[11px] font-mono font-bold uppercase tracking-wider">
                         National Level Competition
                       </span>
-                      <div className="flex items-center gap-1.5 text-xs font-mono font-semibold text-slate-500">
-                        <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                      <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-slate-700">
+                        <Calendar className="w-3.5 h-3.5 text-slate-600" />
                         <span>Year {item.year}</span>
                       </div>
                     </div>
@@ -94,8 +101,8 @@ export const Achievements = () => {
                       <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-snug">
                         {item.title}
                       </h3>
-                      <div className="flex items-start gap-2 text-xs sm:text-sm font-semibold text-slate-600">
-                        <Building className="w-4 h-4 text-[#0F766E] shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-700">
+                        <Building className="w-4 h-4 text-teal-800 shrink-0 mt-0.5" />
                         <span>{item.organization}</span>
                       </div>
                     </div>
@@ -150,6 +157,9 @@ export const Achievements = () => {
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-sm animate-in fade-in"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Ceremony Photo Preview"
           onClick={() => setSelectedImage(null)}
         >
           <div
@@ -163,12 +173,18 @@ export const Achievements = () => {
             >
               <X className="w-5 h-5" />
             </button>
-            <img
-              src={selectedImage}
-              alt="Hackathon Winner Ceremony"
-              className="w-full h-auto max-h-[82vh] object-contain rounded-xl"
-            />
-            <div className="p-3 text-center text-xs font-mono text-slate-600">
+            <picture className="w-full h-auto max-h-[82vh] flex items-center justify-center">
+              <source type="image/webp" srcSet="./assets/hackathon_winner.webp" />
+              <img
+                src={selectedImage}
+                alt="Hackathon Winner Ceremony"
+                width="1024"
+                height="768"
+                decoding="async"
+                className="w-full h-auto max-h-[82vh] object-contain rounded-xl"
+              />
+            </picture>
+            <div className="p-3 text-center text-xs font-mono text-slate-700 font-semibold">
               MITK AI Vision National Level 24-Hour Hackathon • First Prize Winner (₹25,000)
             </div>
           </div>

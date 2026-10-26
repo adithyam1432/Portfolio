@@ -43,8 +43,8 @@ export const Education = () => {
                   >
                     {item.status}
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-slate-600 liquid-glass-pill px-3 py-1 rounded-xl">
-                    <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-slate-700 font-semibold liquid-glass-pill px-3 py-1 rounded-xl">
+                    <Calendar className="w-3.5 h-3.5 text-slate-600" />
                     <span>{item.period}</span>
                   </div>
                 </div>
@@ -54,10 +54,10 @@ export const Education = () => {
                   <h3 className="text-lg font-bold text-slate-900 leading-snug">
                     {item.degree}
                   </h3>
-                  <p className="text-xs font-semibold text-slate-600">
+                  <p className="text-xs font-semibold text-slate-700">
                     {item.institution}
                   </p>
-                  <div className="flex items-center gap-1 text-xs text-slate-400">
+                  <div className="flex items-center gap-1 text-xs text-slate-600 font-medium">
                     <MapPin className="w-3 h-3" />
                     <span>{item.location}</span>
                   </div>
@@ -65,13 +65,13 @@ export const Education = () => {
 
                 {/* Performance Metric Pill (CGPA) */}
                 {item.score && (
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl liquid-glass-pill text-[#0F766E] text-xs font-mono font-bold">
-                    <Award className="w-3.5 h-3.5 text-amber-500" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl liquid-glass-pill text-teal-800 text-xs font-mono font-bold">
+                    <Award className="w-3.5 h-3.5 text-amber-600" />
                     <span>{item.score}</span>
                   </div>
                 )}
 
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed">
                   {item.detail}
                 </p>
 

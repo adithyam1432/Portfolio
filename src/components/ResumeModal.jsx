@@ -45,7 +45,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               <h2 id="resume-modal-title" className="text-base font-bold tracking-tight">
                 {personal.name} — Resume
               </h2>
-              <p className="text-xs text-slate-300 font-mono">
+              <p className="text-xs text-slate-200 font-mono">
                 {personal.title} • Verified Document
               </p>
             </div>
@@ -58,7 +58,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
                 onClick={() => setActiveTab('pdf')}
                 aria-label="Switch to PDF View"
                 className={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${
-                  activeTab === 'pdf' ? 'bg-[#0F766E] text-white' : 'text-slate-400 hover:text-white'
+                  activeTab === 'pdf' ? 'bg-[#0F766E] text-white' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 PDF View
@@ -67,7 +67,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
                 onClick={() => setActiveTab('document')}
                 aria-label="Switch to Text Resume view"
                 className={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${
-                  activeTab === 'document' ? 'bg-[#0F766E] text-white' : 'text-slate-400 hover:text-white'
+                  activeTab === 'document' ? 'bg-[#0F766E] text-white' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 Text Resume
@@ -89,7 +89,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               href={personal.resumePdf}
               download="Adithya_Menashinakai_Resume.pdf"
               aria-label="Download PDF Resume"
-              className="px-3 py-2 rounded-lg bg-[#0F766E] hover:bg-teal-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs"
+              className="px-3 py-2 rounded-lg bg-[#0F766E] hover:bg-teal-700 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>
@@ -97,7 +97,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
             <button
               onClick={onClose}
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
               aria-label="Close Modal"
             >
               <X className="w-5 h-5" />
@@ -146,11 +146,11 @@ export const ResumeModal = ({ isOpen, onClose }) => {
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                   {personal.name}
                 </h3>
-                <p className="text-sm font-mono text-[#0F766E] font-bold">
+                <p className="text-sm font-mono text-teal-800 font-bold">
                   {personal.email} • {personal.phone} • {personal.location}
                 </p>
-                <div className="flex justify-center gap-4 text-xs font-mono text-slate-500 pt-1">
-                  <a href={personal.linkedIn} target="_blank" rel="noreferrer" className="underline hover:text-[#0F766E]">LinkedIn</a>
+                <div className="flex justify-center gap-4 text-xs font-mono text-slate-700 font-medium pt-1">
+                  <a href={personal.linkedIn} target="_blank" rel="noreferrer" className="underline hover:text-teal-800">LinkedIn</a>
                   <span>•</span>
                   <a href={personal.github} target="_blank" rel="noreferrer" className="underline hover:text-slate-900">GitHub</a>
                 </div>
@@ -158,7 +158,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Summary */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-700 uppercase tracking-widest border-b pb-1">
                   PROFESSIONAL SUMMARY
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -168,14 +168,14 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Skills */}
               <div className="space-y-2">
-                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-700 uppercase tracking-widest border-b pb-1">
                   TECHNICAL SKILLS
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                   {skills.categories.map((cat) => (
                     <div key={cat.id} className="p-2.5 bg-slate-50 rounded-lg border border-slate-200/80">
                       <span className="font-bold text-slate-900 block font-mono">{cat.name}:</span>
-                      <span className="text-slate-600 font-mono">{cat.skills.join(', ')}</span>
+                      <span className="text-slate-700 font-mono">{cat.skills.join(', ')}</span>
                     </div>
                   ))}
                 </div>
@@ -183,16 +183,16 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Experience */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-700 uppercase tracking-widest border-b pb-1">
                   INTERNSHIP / WORK EXPERIENCE
                 </h4>
                 {experience.map((exp) => (
                   <div key={exp.id} className="space-y-1 text-xs sm:text-sm">
                     <div className="flex justify-between font-bold text-slate-900">
                       <span>{exp.role} | {exp.company}</span>
-                      <span className="font-mono text-xs text-slate-500">{exp.period}</span>
+                      <span className="font-mono text-xs text-slate-700 font-semibold">{exp.period}</span>
                     </div>
-                    <p className="text-xs font-mono text-slate-500">{exp.location}</p>
+                    <p className="text-xs font-mono text-slate-700 font-medium">{exp.location}</p>
                     <ul className="list-disc list-inside space-y-1 text-xs text-slate-700 pt-1">
                       {exp.highlights.map((h, i) => (
                         <li key={i}>{h}</li>
@@ -204,18 +204,18 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Projects */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-700 uppercase tracking-widest border-b pb-1">
                   PROJECTS
                 </h4>
                 {projects.map((proj) => (
                   <div key={proj.id} className="space-y-1 text-xs sm:text-sm">
                     <div className="flex justify-between font-bold text-slate-900">
                       <span>{proj.title}</span>
-                      <span className="font-mono text-xs text-[#0F766E]">{proj.tech.join(', ')}</span>
+                      <span className="font-mono text-xs text-teal-800 font-bold">{proj.tech.join(', ')}</span>
                     </div>
                     <p className="text-xs text-slate-700 leading-relaxed">{proj.description}</p>
                     {proj.liveUrl && (
-                      <p className="text-xs font-mono text-[#0F766E] pt-0.5">Link: {proj.liveUrl}</p>
+                      <p className="text-xs font-mono text-teal-800 font-semibold pt-0.5">Link: {proj.liveUrl}</p>
                     )}
                   </div>
                 ))}
@@ -223,18 +223,18 @@ export const ResumeModal = ({ isOpen, onClose }) => {
 
               {/* Education */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                <h4 className="text-xs font-mono font-extrabold text-slate-700 uppercase tracking-widest border-b pb-1">
                   EDUCATION
                 </h4>
                 {education.map((edu) => (
                   <div key={edu.id} className="flex justify-between text-xs sm:text-sm">
                     <div>
                       <span className="font-bold text-slate-900 block">{edu.degree}</span>
-                      <span className="text-xs text-slate-600">{edu.institution}</span>
+                      <span className="text-xs text-slate-700 font-medium">{edu.institution}</span>
                     </div>
-                    <div className="text-right font-mono text-xs text-slate-500">
+                    <div className="text-right font-mono text-xs text-slate-700">
                       <div>{edu.period}</div>
-                      <div className="font-bold text-[#0F766E]">{edu.status} {edu.score ? `| ${edu.score}` : ''}</div>
+                      <div className="font-bold text-teal-800">{edu.status} {edu.score ? `| ${edu.score}` : ''}</div>
                     </div>
                   </div>
                 ))}
@@ -243,16 +243,16 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               {/* Achievements */}
               {achievements && achievements.length > 0 && (
                 <div className="space-y-3">
-                  <h4 className="text-xs font-mono font-extrabold text-slate-400 uppercase tracking-widest border-b pb-1">
+                  <h4 className="text-xs font-mono font-extrabold text-slate-700 uppercase tracking-widest border-b pb-1">
                     ACHIEVEMENTS
                   </h4>
                   {achievements.map((ach) => (
                     <div key={ach.id} className="flex justify-between items-start text-xs sm:text-sm">
                       <div>
                         <span className="font-bold text-slate-900 block">• {ach.title}</span>
-                        <span className="text-xs text-slate-600">{ach.organization}</span>
+                        <span className="text-xs text-slate-700 font-medium">{ach.organization}</span>
                       </div>
-                      <span className="font-mono text-xs font-bold text-[#0F766E]">{ach.year}</span>
+                      <span className="font-mono text-xs font-bold text-teal-800">{ach.year}</span>
                     </div>
                   ))}
                 </div>
@@ -265,7 +265,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
         {/* Modal Bottom Action Bar */}
         <div className="p-3.5 px-6 bg-slate-900 text-white flex items-center justify-between text-xs shrink-0 font-mono">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-teal-400" />
+            <CheckCircle2 className="w-4 h-4 text-teal-300" />
             <span>Single Source of Truth Resume PDF</span>
           </div>
           <button

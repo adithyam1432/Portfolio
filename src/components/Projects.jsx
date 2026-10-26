@@ -37,10 +37,10 @@ export const Projects = ({ onSelectProject }) => {
                   
                   {/* Category Pill & Metrics */}
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-3 py-1 rounded-full liquid-glass-pill text-[#0F766E] text-xs font-semibold uppercase font-mono tracking-wider">
+                    <span className="px-3 py-1 rounded-full liquid-glass-pill text-teal-800 text-xs font-bold uppercase font-mono tracking-wider">
                       {project.category}
                     </span>
-                    <span className="text-xs font-mono text-slate-400">
+                    <span className="text-xs font-mono text-slate-700 font-semibold">
                       Project #{idx + 1}
                     </span>
                   </div>
@@ -50,7 +50,7 @@ export const Projects = ({ onSelectProject }) => {
                     <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-sm font-medium text-slate-500 font-mono">
+                    <p className="text-sm font-semibold text-slate-700 font-mono">
                       {project.subtitle}
                     </p>
                   </div>
@@ -85,7 +85,7 @@ export const Projects = ({ onSelectProject }) => {
 
                   {/* Tech Stack Pills */}
                   <div className="pt-2 flex flex-wrap gap-2 items-center">
-                    <span className="text-xs font-mono text-slate-400 font-semibold mr-1">Stack:</span>
+                    <span className="text-xs font-mono text-slate-700 font-bold mr-1">Stack:</span>
                     {project.tech.map((t) => (
                       <span
                         key={t}
@@ -102,7 +102,7 @@ export const Projects = ({ onSelectProject }) => {
                 <div className="lg:col-span-4 flex flex-col justify-between h-full liquid-glass-card p-5 sm:p-6 rounded-3xl space-y-6">
                   
                   <div className="space-y-3">
-                    <h4 className="text-xs font-mono uppercase tracking-wider font-semibold text-slate-400">
+                    <h4 className="text-xs font-mono uppercase tracking-wider font-bold text-slate-700">
                       Key Impact / Feature
                     </h4>
                     <div className="p-3.5 liquid-glass rounded-2xl text-xs text-slate-700 font-medium leading-relaxed flex items-start gap-2.5">
@@ -120,13 +120,14 @@ export const Projects = ({ onSelectProject }) => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Launch Live Application - ${project.title} (opens in new tab)`}
                         className="w-full py-3 px-4 bg-slate-900 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 hover:bg-[#0F766E] transition-all shadow-md active:scale-95"
                       >
                         <span>Launch Live Application</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
                     ) : (
-                      <div className="w-full py-2.5 px-4 liquid-glass text-slate-500 rounded-xl text-xs font-medium text-center">
+                      <div className="w-full py-2.5 px-4 liquid-glass text-slate-700 rounded-xl text-xs font-semibold text-center">
                         Live Demo Private / Local Database
                       </div>
                     )}
@@ -137,6 +138,7 @@ export const Projects = ({ onSelectProject }) => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Inspect GitHub Repository - ${project.title} (opens in new tab)`}
                         className="w-full py-3 px-4 liquid-glass-pill text-slate-800 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 hover:text-slate-950 transition-all shadow-xs active:scale-95"
                       >
                         <Github className="w-3.5 h-3.5 text-slate-900" />
@@ -147,7 +149,8 @@ export const Projects = ({ onSelectProject }) => {
                     {/* Detailed View Button */}
                     <button
                       onClick={() => onSelectProject(project)}
-                      className="w-full text-center text-xs font-mono font-semibold text-[#0F766E] hover:underline pt-1 block"
+                      aria-label={`Read Technical Breakdown → - ${project.title}`}
+                      className="w-full text-center text-xs font-mono font-bold text-teal-800 hover:text-teal-950 hover:underline pt-1 block"
                     >
                       Read Technical Breakdown →
                     </button>

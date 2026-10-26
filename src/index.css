@@ -378,17 +378,34 @@
   }
 }
 
-/* Mobile GPU Optimization: Reduce blur radius & orb dimensions on mobile devices */
+/* Mobile Performance & GPU Optimization */
 @media (max-width: 768px) {
-  .liquid-orb {
-    filter: blur(40px);
-    opacity: 0.65;
+  /* Pause infinite drift animations on mobile to eliminate continuous compositor repaints */
+  .liquid-orb-1, .liquid-orb-2, .liquid-orb-3, .liquid-orb-4, .liquid-orb-5 {
+    animation: none !important;
   }
-  .liquid-orb-1 { width: 360px; height: 360px; }
-  .liquid-orb-2 { width: 380px; height: 380px; }
-  .liquid-orb-3 { width: 360px; height: 360px; }
-  .liquid-orb-4 { width: 300px; height: 300px; }
-  .liquid-orb-5 { width: 340px; height: 340px; }
+  
+  /* Retain ambient liquid gradients with reduced blur radius for smooth 60fps rendering */
+  .liquid-orb {
+    filter: blur(35px);
+    opacity: 0.55;
+  }
+  .liquid-orb-1 { width: 300px; height: 300px; }
+  .liquid-orb-2 { width: 320px; height: 320px; }
+  .liquid-orb-3 { width: 300px; height: 300px; }
+  .liquid-orb-4, .liquid-orb-5 {
+    display: none; /* Hide extraneous offscreen orbs on mobile */
+  }
+
+  /* Lightweight backdrop blur on mobile cards to eliminate layer memory overhead */
+  .liquid-glass-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+  .liquid-glass {
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+  }
 }
 
 /* Below-The-Fold Content Visibility Optimization (Dramatically cuts initial layout & paint DOM work) */
@@ -399,5 +416,5 @@
 #education,
 #contact {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
+  contain-intrinsic-size: auto 800px;
 }

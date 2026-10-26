@@ -64,7 +64,7 @@ export const About = () => {
                 key={idx}
                 className="p-5 sm:p-6 rounded-2xl liquid-glass-card space-y-2 group"
               >
-                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider font-mono">
+                <div className="text-xs font-bold text-slate-700 uppercase tracking-wider font-mono">
                   {item.label}
                 </div>
                 <div className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0F766E] transition-colors">
@@ -75,9 +75,9 @@ export const About = () => {
 
             {/* Target Role Card spanning 2 cols */}
             <div className="col-span-2 p-6 sm:p-7 rounded-3xl liquid-glass-dark text-white space-y-3 shadow-2xl">
-              <div className="flex items-center gap-2 text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">
-                <Briefcase className="w-3.5 h-3.5" />
-                <h3 className="text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">Target Opportunities</h3>
+              <div className="flex items-center gap-2 text-xs font-mono text-teal-300 font-bold uppercase tracking-wider">
+                <Briefcase className="w-3.5 h-3.5 text-teal-300" />
+                <h3 className="text-xs font-mono text-teal-300 font-bold uppercase tracking-wider">Target Opportunities</h3>
               </div>
               <p className="text-sm text-slate-200 leading-relaxed font-medium">
                 {about.targetOpportunities || "Seeking Frontend Developer, Software Engineer, React Developer, Full-Stack Developer, or Associate Software Engineer roles."}

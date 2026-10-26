@@ -63,7 +63,7 @@ export const Skills = () => {
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
                   selectedCategory === cat.id
                     ? 'bg-slate-900 text-white shadow-xs font-semibold'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    : 'text-slate-700 hover:text-slate-950 hover:bg-white/60'
                 }`}
               >
                 {cat.name}
@@ -89,7 +89,7 @@ export const Skills = () => {
                       {cat.name}
                     </h3>
                   </div>
-                  <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-full liquid-glass-pill text-slate-500">
+                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded-full liquid-glass-pill text-slate-700">
                     {cat.skills.length} item{cat.skills.length > 1 ? 's' : ''}
                   </span>
                 </div>
@@ -107,9 +107,9 @@ export const Skills = () => {
                 </div>
               </div>
 
-              <div className="pt-3.5 border-t border-white/70 text-[11px] text-slate-400 font-mono flex items-center justify-between">
+              <div className="pt-3.5 border-t border-white/70 text-[11px] text-slate-700 font-mono font-semibold flex items-center justify-between">
                 <span>Verified Technical Matrix</span>
-                <span className="text-teal-600/70 font-semibold">• Active Stack</span>
+                <span className="text-teal-800 font-bold">• Active Stack</span>
               </div>
             </div>
           ))}

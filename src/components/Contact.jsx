@@ -53,7 +53,7 @@ export const Contact = () => {
                     <Mail className="w-5 h-5 text-[#0F766E]" />
                   </div>
                   <div className="truncate">
-                    <div className="text-[11px] font-mono text-slate-400 font-semibold uppercase">Email Address</div>
+                    <div className="text-[11px] font-mono text-slate-700 font-bold uppercase">Email Address</div>
                     <a
                       href={`mailto:${personal.email}`}
                       className="text-sm font-semibold text-slate-900 hover:text-[#0F766E] truncate block"
@@ -71,7 +71,7 @@ export const Contact = () => {
                   >
                     {copied ? (
                       <>
-                        <Check className="w-3.5 h-3.5 text-teal-600" />
+                        <Check className="w-3.5 h-3.5 text-teal-700" />
                         <span className="text-teal-700 font-semibold hidden sm:inline">Copied</span>
                       </>
                     ) : (
@@ -99,7 +99,7 @@ export const Contact = () => {
                     <Phone className="w-5 h-5 text-slate-700" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-mono text-slate-400 font-semibold uppercase">Phone Number</div>
+                    <div className="text-[11px] font-mono text-slate-700 font-bold uppercase">Phone Number</div>
                     <a
                       href={`tel:${personal.phone}`}
                       className="text-sm font-semibold text-slate-900 hover:text-[#0F766E]"
@@ -124,7 +124,7 @@ export const Contact = () => {
                   <MapPin className="w-5 h-5 text-slate-700" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-slate-400 font-semibold uppercase">Location</div>
+                  <div className="text-[11px] font-mono text-slate-700 font-bold uppercase">Location</div>
                   <div className="text-sm font-semibold text-slate-900">
                     {personal.location}
                   </div>
@@ -159,12 +159,12 @@ export const Contact = () => {
                       <div className="text-sm font-bold text-slate-900 group-hover:text-[#0A66C2] transition-colors">
                         LinkedIn Profile
                       </div>
-                      <div className="text-xs text-slate-500 font-mono">
+                      <div className="text-xs text-slate-700 font-semibold font-mono">
                         adithya-menashinakai-2656b7302
                       </div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#0A66C2]" />
+                  <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-[#0A66C2]" />
                 </a>
 
                 <a
@@ -182,22 +182,22 @@ export const Contact = () => {
                       <div className="text-sm font-bold text-slate-900 group-hover:text-slate-900 transition-colors">
                         GitHub Profile
                       </div>
-                      <div className="text-xs text-slate-500 font-mono">
+                      <div className="text-xs text-slate-700 font-semibold font-mono">
                         adithyam1432
                       </div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-slate-900" />
+                  <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-slate-900" />
                 </a>
               </div>
             </div>
 
             {/* Recruiter Guarantee Card */}
             <div className="p-5 rounded-2xl liquid-glass-dark text-white space-y-2">
-              <h4 className="text-xs font-mono text-teal-400 font-semibold uppercase tracking-wider">
+              <h4 className="text-xs font-mono text-teal-300 font-bold uppercase tracking-wider">
                 Response SLA
               </h4>
-              <p className="text-xs text-slate-300 leading-relaxed font-medium">
+              <p className="text-xs text-slate-200 leading-relaxed font-medium">
                 I monitor email continuously and respond to all recruiter inquiries within 24 business hours.
               </p>
             </div>
